@@ -6,7 +6,7 @@
 
 int main()
 {
-	//load the stl datasss
+	//load the stl
 	std::string input_filename = "./triangle.stl";
 	Mesh *mesh1 = new Mesh(input_filename);
 	//export the stl data
