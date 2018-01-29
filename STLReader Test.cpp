@@ -3,14 +3,9 @@
 
 #include "stdafx.h"
 #include "stlReader.h"
-#include <ctime>
-#include <chrono>
 
 int main()
 {
-
-	//set a clock for the nearest neighbor search
-	auto start2 = std::chrono::steady_clock::now();
 	//load the stl data
 	std::string input_filename = "./triangle.stl";
 	Mesh *mesh1 = new Mesh(input_filename);
@@ -30,10 +25,6 @@ int main()
 	std::cout << bbZ << std::endl;
 	std::cout << a << std::endl;
 	mesh1->export_stl(output_filename);
-	//calculate the duration of the Kd Tree Search
-	auto end2 = std::chrono::steady_clock::now();
-	auto elapsed2 = std::chrono::duration_cast<std::chrono::microseconds>(end2 - start2);
-	std::cout << "The duration of the STL Reader is " << elapsed2.count() << " microseconds." << std::endl;
 	delete mesh1;
     return 0;
 }
